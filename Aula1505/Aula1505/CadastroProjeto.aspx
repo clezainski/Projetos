@@ -12,7 +12,7 @@
                     <asp:RequiredFieldValidator ID="rfvNome" runat="server" ErrorMessage="Campo Nome é Obrigatório." ControlToValidate="txtNome"></asp:RequiredFieldValidator>
                 </div>
                 <div class="row">
-                    <asp:Label ID="lblDescricao" runat="server" Text="Descricao"></asp:Label>
+                    <asp:Label ID="lblDescricao" runat="server" Text="Descricao" BorderColor="Yellow"></asp:Label>
                     <asp:TextBox ID="txtDesricao" runat="server" TextMode="MultiLine"></asp:TextBox>                
                 </div>
 
