@@ -1,4 +1,5 @@
-﻿using Aula2405_EF_MF.Models;
+﻿using Aula2405_EF_MF.Controllers;
+using Aula2405_EF_MF.Models;
 using Aula2405_EF_MF.Views;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Aula2405_EF_MF
 {
     public partial class WebForm1 : BasePage
     {
+        CategoriasController ctrl = new CategoriasController();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,15 +23,21 @@ namespace Aula2405_EF_MF
             Categoria categoria = new Categoria();
             categoria.Nome = txtNome.Text;
             categoria.Descricao = txtDescricao.Text;
+            categoria.Ativo = true;
 
-            contexto.Categorias.Add(categoria);
-            contexto.SaveChanges();
+            ctrl.Adicionar(categoria);
+            Limpar();
+        }
+
+        private void Limpar()
+        {
+            txtDescricao.Text = string.Empty;
+            txtNome.Text = string.Empty;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtDescricao.Text = string.Empty;
-            txtNome.Text = string.Empty;
+            Limpar();
         }
     }
 }
