@@ -92,10 +92,7 @@
                         </tr>
                     </SelectedItemTemplate>
                 </asp:ListView>   
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CadastroBancarioDBConnectionString %>" SelectCommand="SELECT [Nome], [Gerente] FROM [Agencias] WHERE ([Ativo] = @Ativo)">
-                    <SelectParameters>
-                        <asp:Parameter DefaultValue="true" Name="Ativo" Type="Boolean" />
-                    </SelectParameters>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CadastroBancarioDBConnectionString %>" SelectCommand="SELECT Nome, Gerente FROM Agencias WHERE (Ativo = 1) ORDER BY Nome">
                 </asp:SqlDataSource>
             </div>            
         </ContentTemplate>

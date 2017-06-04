@@ -18,7 +18,7 @@ namespace CadastroCorrentista.Views.Cliente_view
         {
             if (!Page.IsPostBack)
             {
-                ddlAgencia.DataSource = AgenciaController.ListarAgencias();
+                ddlAgencia.DataSource = AgenciaController.ListarAgencias().OrderBy(c=> c.Nome);
                 ddlAgencia.DataTextField = "Nome";
                 ddlAgencia.DataValueField = "Nome";
                 ddlAgencia.DataBind();
