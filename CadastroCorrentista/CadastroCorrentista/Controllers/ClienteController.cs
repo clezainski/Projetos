@@ -161,7 +161,7 @@ namespace CadastroCorrentista.Controllers
         public static Cliente VerificaSeContaExiste(Cliente cliente)
         {
             return contexto.Clientes.FirstOrDefault(x => x.Conta.Equals(cliente.Conta) &&
-            x.AgenciaId == cliente.AgenciaId && x.Ativo == true);
+            x.AgenciaId == cliente.AgenciaId && x.Ativo == true && x.Cpf!=cliente.Cpf);
         }
 
         //Lista todos os clientes
