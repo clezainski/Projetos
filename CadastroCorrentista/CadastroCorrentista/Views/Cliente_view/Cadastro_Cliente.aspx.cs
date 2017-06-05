@@ -57,7 +57,7 @@ namespace CadastroCorrentista.Views.Cliente_view
             }
             else
             {
-                script = "alert(\"Falhou! CPF já cadastrado.\");";
+                script = "alert(\"Falhou! CPF já cadastrado ou conta já existe.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }            

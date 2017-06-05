@@ -18,7 +18,7 @@ namespace CadastroCorrentista.Views.Cliente_view
         {
             if (!Page.IsPostBack)
             {
-                ddlAgencia.DataSource = AgenciaController.ListarAgencias();
+                ddlAgencia.DataSource = AgenciaController.ListarAgencias().OrderBy(c => c.Nome);
                 ddlAgencia.DataTextField = "Nome";
                 ddlAgencia.DataValueField = "Id";
                 ddlAgencia.DataBind();
@@ -99,7 +99,7 @@ namespace CadastroCorrentista.Views.Cliente_view
             }
             else
             {
-                script = "alert(\"Falhou a alteração!\");";
+                script = "alert(\"Falhou a alteração! Já há cliente com a mesma conta e agência.\");";
                 ScriptManager.RegisterStartupScript(this, GetType(),
                                       "ServerControlScript", script, true);
             }
